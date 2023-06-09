@@ -1,0 +1,39 @@
+Week 1
+This week we formed our group, with the group consisting of Austina, Dominic, Jeffrey, Summer and me. We also decided upon our group name. We decided upon JAIDS as our group name, which
+came about from taking the first letter from each members name. A Facebook group chat was also established, so that we could have a consistent platform to meet upon, and give updates on the
+project. Jeffrey took the role of the SCRUM master and we also decided that Austina and Dominic would be working on the front end and that the rest would be working on the back end. We set
+up our Jira as well during this first week. The recipe system was the project we went for as many of our group members were interested in that topic. Finally, the group also decided upon 
+our next meeting day, which was decided to be on Tuesday.  
+
+Week 2
+We had our first  non-lab meeting this week, in which we discussed what work would have to be completed before our lab class on Friday. Each group member had to come up with two user 
+stories and accompanying acceptance criteria, for each of the 7 functionalities mentioned in the project brief. On Friday, I also found 3 other websites that harboured the same purpose as 
+our project. This meant that we had 5 websites upon which we were to conduct our research upon. These 5 websites were distributed amongst ourselves, and we had to conduct our research and
+present it to the group on our Friday lab lesson. 
+
+In our Friday lab lesson, we presented the work we conducted throughout the week after our first meeting. We gained a better understanding as to how our project should look like, alongside
+what our novelty features could be. Allocation of the remaining work for the proposal was then done. The group then decided upon a day next week to meet up, before our Friday lab.
+
+Week 3
+This week I focussed on finish the project proposal. I also tried to get acquainted with the base of the backend.
+
+Week 4
+Worked on the search function and tried writing some tests for it.
+
+Week 5
+Worked on getting acquainted with React, Javascript and HTML and improving the functionality of the search engine function.
+
+Week 6
+Worked on getting acquainted with React, Javascript and HTML, by watching some tutorials and opening up the frontend.
+
+Week 7
+Worked on the signchecker function and implemented it in cases where conditional rendering was required.
+
+Week 8
+Worked on the user accounts pages.
+
+Week 9
+Continued work on the user accounts pages whilst also looking at working on the user profiles pages
+
+Week 10
+Continued work on the user accounts pages, as well as the user updates and user my profiles pages

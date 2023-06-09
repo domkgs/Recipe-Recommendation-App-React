@@ -1,0 +1,235 @@
+Example endpoints to call backend functions
+-----------------------------------------------------------
+RECIPE CREATION:
+
+url: '/recipe/create'
+method: POST
+
+inputs: title, creator_id, ingredients, steps, time,
+        servings, difficulty, nutrition_facts, tags, image
+input = {
+    'title': string,
+    'creator_id': int,
+    'ingredients': [
+        {
+            'name': string,
+            'quantity': float,
+            'units': string
+        }
+    ],
+    'steps': [
+        {
+            'instruction': string,
+            'time': float, (in minutes)
+        }
+    ],
+    'time': float, (in minutes),
+    'servings': int,
+    'difficulty': int, (1-5),
+    'nutrition_facts': [num1,num2,num3,num4],
+                       [Calories, fat, carbs, protein],
+    'tags': list of string,
+    'image': (?)
+}
+outputs:
+ - BadRequest: Invalid title, ingredients or steps
+ - Forbidden: No user with creator_id exists
+ - {}
+-----------------------------------------------------------
+FORGOT PASSWORD:
+User receives an email with a reset code, uses the reset code to reset their password
+
+url: '/user/forgot/password'
+
+method: POST
+
+inputs: email
+outputs:
+ - BadRequest: Invalid email
+ - {} (Success)
+-----------------------------------------------------------
+RESET PASSWORD:
+User uses their reset code to change their password
+
+url: '/user/reset/password'
+
+method: POST
+inputs: email
+        reset_code
+        password
+        confirm_password
+outputs:
+ - BadRequest: Invalid email, reset code, password, or passwords do not match
+ - {} (Success)
+-----------------------------------------------------------
+RECIPE DETAILS:
+Gets the details of a recipe given its recipe_id
+
+url: '/recipe/details'
+method: GET
+inputs: recipe_id
+
+outputs:
+ - BadRequest: Invalid recipe_id
+ - {
+    'title': string
+    'ingredients': list of dict (see below)
+    'creator_id': int
+    'steps': list of dict (see below)
+    'time': float (in mins)
+    'servings': int
+    'difficulty': int (out of 5)
+    'nutrition_facts': [Calories, fat, carbs, protein] (last 3 in g)
+    'tags': list of string
+    'recipe_id': int
+    'image': (?)
+ }
+
+ingredient dict:
+{
+    'name': string
+    'quantity': float
+    'units': string
+    'categories': list of string
+    'ingredient_id': int
+}
+step dict:
+{
+    'instruction': string
+    'time': float (in mins)
+}
+-----------------------------------------------------------
+RECIPE SEARCH:
+Gets a list of recipes given a list of ingredients, also increases search counter
+of each ingredient
+
+url: '/recipe/search'
+inputs: ingredients_list (list of ingredient names in lowercase)
+        filters (list of strings - should be same as recipe tags,
+                 leave empty for no filters)
+
+outputs:
+ - BadRequest: No ingredients input
+ - {
+    'recipes': list of shorter recipe dicts
+    'close_recipes': like above but with extra 'missing_ingredients'
+ }
+ close_recipe example:
+{
+    'title': string
+    'difficulty': int
+    'time': float
+    calories: 'float'
+    'missing_ingredients': list of string
+    'image': image
+    'recipe_id': int
+}
+-----------------------------------------------------------
+ADD FAVOURITE RECIPE:
+Adds a recipe to a user's list of favourites
+
+url: '/user/favourites/add'
+inputs: user_id
+        recipe_id
+
+outputs:
+ - Forbidden: No user with this id
+ - BadRequest: No recipe with this id
+ - {} (success)
+-----------------------------------------------------------
+REMOVE FAVOURITE RECIPE
+Removes a recipe to a user's list of favourites
+
+url: 'user/favourites/remove'
+inputs: user_id
+        recipe_id
+
+outputs:
+ - Forbidden: No user with this id
+ - BadRequest: Recipe not favourited by user
+ - {} (success)
+-----------------------------------------------------------
+GET FAVOURITE RECIPES
+Returns a user's list of favourited recipes
+
+url: 'user/favourites/get'
+inputs: user_id
+
+outputs:
+ - Forbidden: No user with this id
+ - {
+    'favourites': list of full recipe dictionaries
+ }
+-----------------------------------------------------------
+GET USER PROFILE
+Returns a user's profile details
+
+url: 'user/profile'
+inputs: user_id
+
+outputs:
+ - Forbidden: No user with this id
+ - {
+    'email': string
+    'first_name': string
+    'last_name': string
+    'user_id': int
+    'favourites': list of short recipe dictionaries
+    'created_recipes': list of short recipe dictionaries
+    'image': image
+    'tag_line': string
+    'description': string
+}
+-----------------------------------------------------------
+SET USER IMAGE
+Changes the user's image
+
+url: 'user/set/image
+inputs: user_id,
+        image
+
+outputs:
+ - Forbidden: No user with this id
+ - {} (success)
+-----------------------------------------------------------
+SET USER TAG_LINE/DESCRIPTION
+Changes the user's tag_line or description, they are used in the same way
+
+urls: 'user/set/tag_line' OR 'user/set/description'
+inputs: user_id,
+        tag_line (string) OR description (string)
+
+outputs:
+ - Forbidden: No user with this id
+ - BadRequest: tag_line/description is not a string
+ - {} (success)
+-----------------------------------------------------------
+SET USER NAME
+Changes the user's tag_line or description, they are used in the same way
+
+urls: 'user/set/name'
+inputs: user_id,
+        first_name, (string)
+        last_name (string)
+
+outputs:
+ - Forbidden: No user with this id
+ - BadRequest: first or last name is not a string, name lengths are 0
+ - {} (success)
+-----------------------------------------------------------
+GET ALL SAVED INGREDIENT SETS
+Gets all of a user's saved ingredient sets
+
+url: 'ingredients/get/all/sets'
+inputs: user_id
+
+outputs:
+ - Forbidden: No user with this id
+ - {
+    'sets': list of ingredient sets
+ }
+ingredient set example:
+{
+    'name': string,
+    'ingredients': list of string
+}

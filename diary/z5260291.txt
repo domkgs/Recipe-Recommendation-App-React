@@ -1,0 +1,160 @@
+Week 1
+FRIDAY:
+Formed a group with Austina, Ishmam, Dominic and Summer. The group name 'JAIDS' is derived from the first letter of each member's names.
+We decided to do the recipe recommendation system, and brainstormed a few novelty ideas of our own to add to the project.
+As for roles, I am the scrum master of the group, with Ishmam and Summer working on the backend using Python, while Austina and Dominic do the frontend through ReactJS.
+TODO:
+ - Learn exactly what the scrum master's job is
+ - Figure out all the tools I need to accomplish this
+ - Finish setting up Jira (sprints, issues, etc.)
+
+Week 2
+MONDAY:
+Attempted to set up GitHub for Jira, needed admin permissions so I emailed Eric to see if he could help, still awaiting a response. 
+Having trouble using SSH to clone the respository, GitHub for Desktop seems to work, however.
+Basic sprint layout created (3 sprint structure) with the end of each sprint as the dates for each of the demos. (A, B and final)
+User stories need to be created and allocated to the sprints.
+
+TUESDAY:
+Short meeting to discuss tasks to complete by the lab on Friday to prepare for the project proposal.
+Each member was assigned a different website to research and compare to our own project and everyone needs to create user stories for each requirement.
+
+THURSDAY:
+Researched myfridgefood.com, a website which allows users to input a list of their ingredients and recommends recipes based on their ingredients.
+A more detailed research document was created and uploaded to the group sharepoint.
+Many user stories were written and added to the sharepoint document.
+Eric replied to the email sent on Monday, GitHub is now successfully integrated into Jira.
+
+FRIDAY:
+Team meeting in the morning lab. Shared our user stories, research on competitors and brainstormed potential ideas for novelty functionality.
+Some ideas include:
+ - Weekly meal planning
+ - Shopping list
+ - Macronutrient tracker (meal planning can recommend meals based on macronutrient needs)
+Work for the project proposal was also delegated, I was assigned to write the description on the technologies that we plan to use, 
+and background information for the proposal
+
+Week 3
+MONDAY:
+Wrote up a draft for the background information and technical description, still need to refine the draft and add more
+for the competitor research and technical information on the frontend. 
+
+TUESDAY:
+Group meeting to see where everyone is at for the proposal. Discussed potential interface layouts, user stories and more potential novelty ideas.
+
+FRIDAY:
+In-person lab meeting to decide on novelty ideas and update each other on our progress on the project as a whole. The proposal is essentially done
+but we still need to make finishing touches and ensure the interface satisfies our user stories. I need to refine my own sections, adding in what
+I've learned on the technical side and modify the background information. 
+TODO:
+ - Finish off my parts for the proposal
+ - Set up code skeleton for the backend
+     -> Data structures
+     -> Requirements (libraries)
+     -> Make a "readme" to help teammates set up
+
+SUNDAY:
+The necessities for the running the server have been implemented, basic class structures were created but not in detail to demonstrate how the project will be set up.
+Dependencies have been installed using a virtual environment, a 'requirements.txt' and 'README.txt' were created to help other members set up their environments for
+the backend. Need to have a meeting to find out what is needed of the frontend to help decide the functions on the backend.'
+
+Meeting Sunday night to finish off the proposal.
+
+Week 4
+TUESDAY:
+Sprint officially started. Team meeting to plan our objectives for the first sprint, coordinating the goals of both front and backend. 
+
+THURSDAY:
+Basic class skeleton implemented for backend. Still unsure about exactly which attributes are required, but basic setup is completed.
+
+FRIDAY:
+Team meeting in the lab to update each other on our progress. Work assigned to backend, my job is to implement user authentication functions such as registering, login and logout.
+
+Week 5
+MONDAY:
+User authentication completed. Functions and enpoints defined and tested by Dominic on the frontend. Testing went well, no obvious issues with the implementation.
+
+THURSDAY:
+Team meeting to prepare for Progress Demo A, recipe contribution and manual recipe and ingredient input completed on the backend. Pickling functions for persistence is completed too. A lot of the data storage for the backend is ready, just need to connect with the frontend through endpoints and complete logical functions and fetch requests.
+
+FRIDAY:
+Created a 'recipe_contribution_format.txt' file to help team members use the recipe contribution endpoint
+Progress demo in lab, with retrospective right after. Key points below.
+What went well:
+ - Front end looks nice aesthetically
+ - Data neatly organised in backend
+ - User authentication functions work very well
+
+What didn't go well:
+ - Did not write to satisfy user stories, but instead focused on functionality
+ - Time management
+ - Communcation between front and back end teams
+
+To try next time:
+ - Coordinate endpoint functions with frontend
+ - Consistently updating Jira board
+ - Communicate more often outside of meetings
+
+Week 6
+WEDNESDAY:
+Added a function to retrieve the full list of ingredients in the database. The ingredients are returned inside of their categories. Also added a way to manually add
+new ingredients and recipes on the backend through inputs into a terminal for testing purposes. The function asks for each of the required fields such as ingredient 
+name and categories, then creates either a Recipe or Ingredient object to add to the backend.
+
+FRIDAY:
+Added password resetting functionality. Users can request a password reset by inputting their email. They will then get sent a 50 character string as a code which
+they will input alongside their email and new password. If the email and reset codes match and the password is valid, their password will be updated. Changed the
+'recipe_contribution_format.txt' file to 'endpoints.txt' to include all routes and included the new routes into this file.
+
+Week 7
+WEDNESDAY:
+Added a function to get all the details of a recipe for the main recipe page. Still waiting on another team member to finish implementing the recipe search function.
+
+FRIDAY:
+In person lab meeting with feedback received for first demo. More focus needed on implementing specific user stories but the stories were organised in a way that made
+it difficult to implement first as more supplementary features have been included in the sprint even though base functionality needs to be developed first. The
+user stories were reordered to make the workflow schedule more realistic and achieveable. Recipe search function is still incomplete, so I've decided to
+take responsibility for implementing it myself.
+
+SATURDAY:
+Basic recipe search function implemented. It takes a list of ingredients and filters, turns the lists into sets and performs set operations to determine if 
+a user has all of the ingredients required for the recipe. Returns a list of the recipes the user can create with the given ingredients and filters. Currently, the
+search function does not return the list in any specific order. Also updated the recipe contribution function to include creator id and image fields.
+
+Week 8
+TUESDAY:
+Updated the recipe search function to have an additional field, 'close_recipes' which returns recipes if the user has at least 2/3 of the ingredients for the recipe.
+Also added a search count for each ingredient so that whenever an ingredient is searched for, the search counter for that ingredient is incremented. Added a
+second version for the ingredients list to display the search count for ingredients and sort them in descending order.
+
+THURSDAY:
+Added functionality for favouriting recipes - adding a recipe to favourites, removing it from favourites and getting a list of favourite recipes. Had a team meeting
+to prepare for Demo B. Most of the backend functionality is complete but more recipes need to be added to the database.
+
+FRIDAY:
+Progress Demo B in lab followed by a retrospective. Some immediate feedback below:
+ - Needs to be more responsive, too many buttons make the frontend very slow
+ - Use a web scraper to add more recipes
+ - More visual effects needed in response to user actions for feedback
+
+Week 9
+MONDAY:
+Added user profile functions including getting details, image, tag line and description
+
+TUESDAY:
+Fixed up some meal planner functions - can now remove existing meal plans
+
+THURSDAY:
+Fixed up some of the routes using 'GET' methods
+
+FRIDAY:
+Team meeting to discuss preparation for the report and final presentation. All backend functionality has been completed, just need to clean up some code here and
+there. Removed the random test recipes created from the database.
+
+SATURDAY/SUNDAY:
+Added a function to change a user's first and last name and cleaned up the code on the backend.
+
+Week 10
+MONDAY:
+Previously, the only way to get a saved ingredient set is if it was requested with the name of the set. Added a function to get all of a user's saved ingredient sets.
+GET routes are suddenly throwing up strange errors on the frontend so they have been changed to POST.

@@ -1,0 +1,71 @@
+Week 1
+* Formed project group.
+* Decided on doing recipe recommendation system for the project with teammates.
+* Braindstormed novelty ideas with teammates on our system.
+* I will be doing backend with Ishman and Jeffery.
+
+
+Week 2
+* Came up with some User Stories
+* Researched into Foodwise website. Analyzed what features it has and what could be implemented in our system
+* brainstormed into novelty ideas with teammates
+* I am doing System Architecture in the proposal
+
+
+Week 3
+* Finished system architecture and user interaction
+* Brainsormed more novelty ideas with teamates and checked user story and acceptance criteria
+* Did some research in implementing the novelty features we came up with
+
+Week 4
+* created database and basic data structure with backend group 
+* started writing code I was doing recie related part(creatng recipe etc)
+* found 4 recipe as early recipe data. added to database and further implemented data_store.py
+
+Week 5
+* researched into ingredients list and ingredients tags list online
+* implemented ingredients list from online as database
+* Learned about web scrapping and try to scrap recipe from website
+* previous recipe does not fit our datastore(does not cover all attributes in recipes) so researched on recipes with more info and would match our database
+* implemented recipe lists from online as database(going to discuss with teammates about changing it)
+* Started workng on meal planner function
+* demo A + retrospective A
+
+Week 6 
+* web scrap a new ingredients list for better user experience(teammates say the previous one is not really understandable on user part)
+* Implementing meal plan
+* research into recipes online(the previous one does not work as well)
+
+
+Week 7
+* half way through meal planner implementation
+* implemented tag lists and realated functions in backend
+* Redesigned recipe structure for better user experience
+* go through user story, keep up-to-date with teammates
+* there's user story written before thats(duplicated/not comprehensive) changed those for better guidance
+
+
+Week 8
+* Finished meal planner implementation(meal plan create, save, get meal plan information)(could probably change the way we generate meal plan) (eg. based on user favorites)
+* Finished save ingredients set implementation
+* looked through user story and keep it update with teammates
+* Finished meal plan delete and ingredients set delete
+* demo B + retrospective B
+
+
+
+Week 9
+* Learned more about web scrapping and added more recipe data in data store(image included)
+* Implemented more meal plan functionalities(custom meal plan, regenerate unwanted meal plan recipe, change unwanted meal plan recipe to fav)
+* Changed previous meal plan to get better user experience
+* to be honest we should probably use an API(even the free one works)
+* go through lectures and report/demo/code marking criteria and propossal and summerize
+
+
+
+Week 10
+* Implemented some UI for frontend(eg background)
+* learning about frontend knowledge
+* report writing with group mates
+* demo and presentation preparation with group mates
+
